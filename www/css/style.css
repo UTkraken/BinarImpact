@@ -1,0 +1,176 @@
+
+/* Police */
+* {
+    font-family: 'Montserrat', sans-serif;
+  }
+  .w100 {
+    font-weight: 100;
+  }
+  .w200 {
+    font-weight: 200;
+  }
+  .w300 {
+    font-weight: 300;
+  }
+  .w400 {
+    font-weight: 400;
+  }
+/* body */
+
+body
+{
+  font-family: 'Montserrat', sans-serif; 
+}
+
+/* menu sandwish */
+
+#menuJS.active
+{
+    transform: translateX(75%);
+    transition-duration: 1s;
+}
+
+.menuJS
+{
+    background-color: rgba(0, 140, 242, 0.7);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right:0;
+    list-style: none;
+    z-index: 9;
+    display: flex;
+}
+
+.menuJS ul
+{
+    padding-top: 3%;
+    font-size: 3em;
+    line-height: 2em;
+}
+
+header
+{
+    width: 100%;
+    position: relative; 
+    display: flex;
+
+}
+
+header img
+{
+  position: absolute;
+  padding-top: 1%;
+  padding-left: 1%;
+}
+
+header a
+{
+    position: absolute;
+    right: 2%;
+    top: 3%;
+    z-index: 10;
+}
+
+header>video
+{
+  float: left;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.menu-icon{
+    position: relative;
+    width: 54px;
+    height: 54px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: transform 0.5s;
+    z-index: 10;
+}
+
+.menu-icon .icon_span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); 
+    width: 22px;
+    height: 2px;
+    background-color: #00cdf2;
+    transition: background 0.5s, transform 0.5s;
+    transition: background 0.5s steps(1, end);
+    z-index: 10;
+}
+
+.icon_span::before, .icon_span::after{
+    transform-origin: 100% 50%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 22px;
+    height: 2px;
+    transform: translateY(-8px);
+    background-color: #00cdf2;
+    transition: transform 0.5s;
+    z-index: 10;
+}
+
+.icon_span::after{
+    transform: translateY(8px);
+}
+
+.menu-icon:hover .icon_span::before{
+    transform: translateY(-10px);
+}
+
+.menu-icon:hover .icon_span::after{
+    transform: translateY(10px);
+}
+
+svg{
+    opacity: 0;
+    fill: transparent;
+    stroke: #00cdf2;
+    stroke-width: 2px;
+    stroke-dasharray: 22 230;
+    transition: stroke-dasharray 0.5s, stroke-dashoffset 0.5s, opacity 0.5s steps(1, end);
+}
+
+.menu-icon.is-opened .icon_span{
+    transition: background 0.5s steps(1, start);
+    background-color: transparent;
+}
+
+.menu-icon.is-opened svg{
+    opacity: 1;
+    stroke-dasharray: 160;
+    stroke-dashoffset: -65;
+    transition: stroke-dasharray 0.5s, stroke-dashoffset 0.5s, opacity 0.5s steps(1, start);
+}
+
+.menu-icon.is-opened .icon_span::before{
+    transform: translateX(-3px) translateY(-8px) rotate(-45deg);
+}
+
+.menu-icon.is-opened .icon_span::after{
+    transform: translateX(-3px) translateY(8px) rotate(45deg);
+}
+
+#menuJS
+{
+    transform: translateX(100%);
+    transition-duration: 1s;
+}
+
+/* footer */
+
+footer
+{
+  text-align: center;
+}
